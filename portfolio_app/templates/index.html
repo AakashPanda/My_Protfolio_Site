@@ -1,0 +1,300 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" class="rounded-circle" href="{% static 'images/ic_project.png' %}">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+
+    <!--blogs slider-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://e6t7a8v2.stackpathcdn.com/tutorial/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+
+
+
+    <script src="https://kit.fontawesome.com/bd6c236e3b.js" crossorigin="anonymous"></script>
+    {% block script_file %} {% endblock script_file %}
+    <title>My Portfolio</title>
+    <style>
+        .foot {
+            width: 50px;
+
+        }
+
+        .foote {
+            font-family: 'Aclonica';
+            font-size: 22px;
+            font-size: xx-large;
+            font-weight: 50px;
+        }
+
+        html,
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Roboto", sans-serif
+        }
+
+        .csl {
+            background-color: rgb(20, 173, 166);
+        }
+
+        a {
+            color: white;
+            width: 12rem;
+            font-size: large;
+
+        }
+
+        .w3-bar .w3-button {
+            padding: 16px;
+        }
+
+        .AA {
+            background-color: rgb(24, 29, 29);
+        }
+
+        .sizes {
+            font-size: 3rem;
+            font-family: Impact;
+            font-style: bold;
+            text-shadow: darkslategrey;
+        }
+
+        /** DarkMode css**/
+        body {
+            background-color: white;
+            color: black;
+
+        }
+
+        .dark-mode {
+            background-color: black;
+            color: white;
+        }
+
+        /** DarkMode css end **/
+
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked+.slider {
+            background-color: #0b0c0c;
+        }
+
+        input:focus+.slider {
+            box-shadow: 0 0 1px #080808;
+        }
+
+        input:checked+.slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        /* Rounded sliders */
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-bar-block w3-black w3-animate-right w3-top w3-text-light-grey w3-large"
+        style="z-index:3;width:250px;font-weight:bold;display:none;right:0;" id="mySidebar">
+        <a href="javascript:void()" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-32"> CLOSE
+            &nbsp; <i class="fa fa-remove"></i></a>
+        <hr style="background-color: whitesmoke;">
+        <a href="{% url 'main_page' %}" onclick="w3_close()"
+            class="w3-bar-item w3-button w3-center w3-padding-16">HOME</a>
+        <a href="{% url 'home_page' %}" onclick="w3_close()"
+            class="w3-bar-item w3-button w3-center w3-padding-16">ABOUT</a>
+        <a href="{% url 'certificates_page' %}" onclick="w3_close()"
+            class="w3-bar-item w3-button w3-center w3-padding-16">CERTIFICATES</a>
+        <a href="{% url 'project_page' %}" onclick="w3_close()"
+            class="w3-bar-item w3-button w3-center w3-padding-16">PROJECTS</a>
+        <a href="{% url 'blogs_page' %}" onclick="w3_close()"
+            class="w3-bar-item w3-button w3-center w3-padding-16">BLOGS</a>
+        <a href="{% url 'contact_page' %}" onclick="w3_close()"
+            class="w3-bar-item w3-button w3-center w3-padding-16">CONTACT</a>
+
+
+        <!--change-->
+        <div class="w3-center" style="margin-top: 12px;">
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round" onclick="toggleTheme()"></span>
+            </label>
+        </div>
+    </nav>
+
+    <!-- Top menu on small screens -->
+    <header class="w3-container w3-top w3-white w3-xlarge w3-padding-16">
+        <span class="w3-left w3-padding sizes">My Portfolio</span>
+        <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
+
+
+
+
+
+    </header>
+    <br><br><br>
+
+    <!-- Other html page  come here .............-->>
+    {% block contact%}
+
+    {%endblock contact%}
+    <!-- End Other html page  come here .............-->
+
+
+    <footer class="w3-container w3-teal w3-center w3-margin-top w3-margin-right" style="padding: 2px;">
+        <br>
+        <p style="font-size: large;" class="foote">Find me on social media.</p>
+        <a href="https://www.facebook.com/aakash.panda.35">
+            <i class="fa fa-facebook-official w3-hover-opacity foot"></i>
+        </a>
+        <a href="https://www.instagram.com/__aakash.panda_2000__/">
+            <i class="fa fa-instagram w3-hover-opacity foot"></i>
+        </a>
+
+        <a href="https://twitter.com/AakashPanda9">
+            <i class="fa fa-twitter w3-hover-opacity foot"></i>
+        </a>
+
+       
+        <a href="https://www.linkedin.com/in/aakash-panda-332759195/">
+            <i class="fa fa-linkedin w3-hover-opacity foot"></i>
+        </a>
+
+        <a href="https://github.com/AakashPanda">
+            <i class="fa fa-github w3-hover-opacity foot"></i>
+        </a>
+
+        <p style="font-size: large; margin-top:8px;" class="foote">OR Contact me &nbsp;
+            <a href="{% url 'contact_page' %}"><button type="button" class="btn btn-outline-dark "> Click Here </button></a>
+        </p>
+
+
+
+
+        <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
+            <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>
+            <a class="w3-button w3-theme" href="{% url 'main_page' %}"><span class="w3-xlarge">
+                    <i class="fa fa-chevron-circle-up"></i></span></a>
+        </div>
+
+
+    </footer>
+
+
+</body>
+
+
+
+<!-- DarkMode js code -->
+<script>
+    function toggleTheme() {
+
+        var element = document.body;
+        element.classList.toggle('dark-mode');
+    }
+</script>
+<!-- DarkMode  js code ends  -->
+
+
+<script>
+    // Script to open and close sidebar
+    function w3_open() {
+        document.getElementById("mySidebar").style.display = "block";
+        document.getElementById("myOverlay").style.display = "block";
+    }
+
+    function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+        document.getElementById("myOverlay").style.display = "none";
+    }
+
+    // Modal Image Gallery
+    function onClick(element) {
+        document.getElementById("img01").src = element.src;
+        document.getElementById("modal01").style.display = "block";
+        var captionText = document.getElementById("caption");
+        captionText.innerHTML = element.alt;
+    }
+
+</script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
+
+{% block script_code %} {% endblock script_code %}
+
+</html>

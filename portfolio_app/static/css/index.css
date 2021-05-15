@@ -1,0 +1,135 @@
+section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)),
+    url("{% static 'images/panda.jpg' %}");
+    background-size: cover;
+}
+
+.card{
+    color: white;
+    background: transparent;
+    border-right-color: chartreuse;
+    border-left-color: chartreuse;
+    
+}
+.colors{
+    color:chartreuse;
+}
+
+
+.co {
+    background-image: linear-gradient(to left bottom, #000744, #000c53, #000e62, #001071, #001181, #001b83, #002484, #002b84, #002f6e, #002a4d, #00202c, #001515);
+}
+
+
+/* Navbar Open */
+
+.nav-space{
+    height: 3.5rem;
+}
+
+.navbar{
+    text-transform: uppercase;
+    font-weight: 700px;
+    font-size: .9rem;
+    letter-spacing: .1rem;
+   /* background: rgba(0,0,0,.6)!important;*/
+}
+
+.up:hover{
+    background-color: gray;
+}
+
+
+.navbar-nav li{
+    padding-right: .7rem;
+}
+
+.navbar-dark .navbar-nav .navbar-link{
+    color:white;
+    padding-top: .8rem; 
+}
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link:hover
+{
+    border-bottom: 2px #11b643 solid; 
+    color: #7a5ee2;
+    font-weight: 1rem;
+}
+
+
+  
+.offset::before{
+    height: 3.8rem;
+    margin-top: -3.8rem;
+    content: "";
+    display: black;
+}
+
+.taxt{
+    margin-top: 1rem;
+    font-family: Comic Sans MS;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+
+/*--Slider--*/
+.carousel-item{
+    height: 80vh;
+}
+
+.carousel-caption{
+    /*position: absolute;*/
+    top:40%;
+    text-transform: uppercase;
+    color: rgb(209, 193, 140);
+    width: 100%;
+    margin-right: 20px;
+}
+
+.carousel-caption h2{
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: .4rem;
+    text-shadow: .1rem .1rem .8rem black;
+    
+    
+   /* padding-bottom: 1rem;*/
+}
+
+.carousel-caption h3{
+    font-size: 1.8rem;
+    text-shadow: .1rem .1rem .5rem  black;
+   /* padding-top: 1.6rem;  */
+}
+
+
+.down{
+    /*opacity: 0.3;*/
+    background: rgba(78, 87, 78, 0.3); /* gray background with 30% opacity */
+}
+
+.clol{
+    color:white;
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* end navbar*/

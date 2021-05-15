@@ -1,0 +1,119 @@
+{% extends 'index.html' %}
+
+{%load static%}
+{% load humanizelib %}
+{% block contact%}
+
+<style>
+    .call {
+        font-size: 3rem;
+        font-family: Impact;
+        font-style: bold;
+        text-shadow: darkslategrey;
+        text-shadow: black;
+        padding-top: 36px;
+
+    }
+
+    .seach_css {
+        font-family: Impact;
+        font-style: bold;
+        text-shadow: darkslategrey;
+        text-shadow: black;
+    }
+
+    .btn-light:hover {
+        background-color: rgb(128, 218, 240);
+        color: white;
+    }
+</style>
+<!-- start the card side -->
+
+<center class="call"> <u>BLOGS</u></center>
+
+<!-- start the card side -->
+<div class="album py-5 cards">
+    <div class="container">
+        <input class="form-control seach_css" id="myInput" type="text" placeholder="Search.."><br>
+        <div class="row" id="myDIV">
+            {% for x in var %}
+            <div class="col-lg-4 col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img src="{{x.images.url}}" height="200px" width="100%" />
+                    <div class="card-body">
+                        <h3 class="card-title">{{x.title}}</h3> 
+                        <p>Author : {{x.author}} </p>
+                        <p class="card-text">{{x.summary}}</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a class="btn btn-light cade" href="#">Read Post</a>
+                                <!--change-->
+                            </div>
+                            <small class="text-muted">{{x.pub_date|naturaltime}}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<br>
+<hr>
+<br>
+
+<!-- Contact Section -->
+
+<div class="w3-container w3-padding-64 w3-theme-l5" id="contact">
+    <div class="w3-row">
+        <div class="w3-col m4" style="margin-left:25px;">
+            <div class="w3-padding-16"><span class="w3-xlarge w3-border-teal w3-bottombar">Want to share your Blog
+                    ?</span></div>
+            <h3>Here You Can Post....</h3>
+            <p>Here You Can Post Programming language Informations. If you know any language you can add it here!!!  </p>
+        </div>
+        <div class="w3-col m7">
+            <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="" name="" method="POST" target="_blank" enctype="multipart/form-data">
+               {% csrf_token %}
+                <div class="w3-section">
+                    <label>Title</label>
+                    <input class="w3-input" type="text" name="title" required placeholder="Your Title">
+                </div>
+                <div class="w3-section">
+                    <label>Author</label>
+                    <input class="w3-input" type="text" name="author" required placeholder="Your Title">
+                </div>
+                <div class="w3-section">
+                    <label class="w3-input" for="textAreaExample">Message</label>
+                    <textarea class="form-control" id="textAreaExample" rows="4" type="textarea" name="message" required
+                    placeholder="CLICK HERE and type your BLOG !!! Alternatively,The blogs will be uploaded on the site soon !!!"></textarea>
+                   
+                </div>
+                <div class="w3-section">
+                    <label>Thumbnail</label>
+                    <input class="w3-input " type="file" name="thumbnail" required>
+                </div>
+                <button type="submit" class="w3-button w3-right w3-theme ">Send</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    $(document).ready(function () {
+        $("#myInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myDIV *").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>
+
+
+
+
+{%endblock contact%}
