@@ -50,7 +50,6 @@ PyAudio==0.2.11
 pymongo==3.10.1
 pyparsing==2.4.5
 PyPDF2==1.26.0
-pypiwin32==223
 pypng==0.0.20
 PyQRCode==1.2.1
 python-bidi==0.4.2
@@ -76,4 +75,3 @@ Werkzeug==0.16.0
 whitenoise==5.2.0
 wrapt==1.11.2
 xhtml2pdf==0.2.5
-xlrd==1.2.0
